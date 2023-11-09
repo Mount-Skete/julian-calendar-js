@@ -1,0 +1,25 @@
+name: Node CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build_and_test_18:
+    name: Node 18 Build & Test
+    uses: ./.github/workflows/lib-node.yml
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    with:
+      node-version: 18
+  build_and_test_20:
+    name: Node 20 Build & Test
+    uses: ./.github/workflows/lib-node.yml
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    with:
+      node-version: 20
